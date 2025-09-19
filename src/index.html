@@ -11,7 +11,7 @@
     <p class="disclaimer">
       This is not a real NPS website. It is an educational exercise. If you
       landed here by accident, to find the real website visit
-      <a href="parkUrl">[park name]</a>
+      <a id="park-url" href="parkUrl">Park Name</a>
     </p>
     <div class="skip-links" aria-label="short-cut links" role="navigation">
       <ul>
@@ -43,10 +43,14 @@
     </div>
     <header>
       <section class="global-header">
-        <a href="index.html" class="site-title"
-          ><span class="logo" role="presentation"></span>
-          <span>National Park Service</span></a
-        >
+        <a href="index.html" class="site-title">
+          <div id="logo-holder">
+            <span class="logo" role="presentation">
+
+            </span>
+          </div>
+          <span>National Park Service</span>
+        </a>
         <div class="global-header__right">
           <a class="search-icon" href="#park-footer">
             <svg class="icon">
@@ -58,7 +62,8 @@
             <svg class="icon">
               <use xlink:href="/images/sprite.symbol.svg#menu"></use>
             </svg>
-            <span class="visually-hidden">Open</span> Menu
+            <span class="visually-hidden">Open</span>
+            Menu
           </button>
         </div>
         <nav class="global-nav">
@@ -80,16 +85,59 @@
           </ul>
         </nav>
       </section>
+      <div id="banner-crop">
+        <img draggable="false" id="banner-img" src="https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg">
+      </div>
+      <div id="about-national-park">
+        <span id="park-name">Park Name</span>
+        <span>
+          <p>National Park</p>
+          <p id="park-states">States</p>
+        </span>
+      </div>
       <section id="park-header">
-        <a href="#">
-          <span>Info</span>
-          <svg class="icon" role="presentation" focusable="false">
-            <use xlink:href="/images/sprite.symbol.svg#info"></use>
-          </svg>
-        </a>
-        <svg class="icon" role="presentation" focusable="false">
-          <use xlink:href="/images/sprite.symbol.svg#alert"></use>
-        </svg>
+        <ul>
+          <li>
+            <a draggable="false" href="#">
+              <span>Info</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#info"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a draggable="false" href="#">
+              <span>Alerts</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#alert"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a draggable="false" href="#">
+              <span>Maps</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#location"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a draggable="false" href="#">
+              <span>Calendar</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#calendar"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a draggable="false" href="#">
+              <span>Fees</span>
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="/images/sprite.symbol.svg#fee-22"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </section>
     </header>
     <main id="main"></main>

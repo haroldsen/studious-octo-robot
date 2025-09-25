@@ -356,6 +356,55 @@ a.site-title:hover {
   height: 100%;
 }
 
+.intro {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#info {
+  display: grid;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.media-card {
+  width: 100%;
+  /* background-color: #d1d1d1;
+  padding: 20px;
+  border-radius: 15px; */
+}
+
+.media-card a:hover {
+  cursor: pointer;
+}
+
+#intro-header {
+  font-size: 40px;
+}
+
+footer {
+  background-image: url("https://byui-cse.github.io/wdd231-course/images/topo_pattern.png");
+  padding: 30px;
+}
+
+footer h3, #intro-header {
+  font-family: var(--bs-font-serif);
+}
+
+footer h3 {
+  font-size: 25px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 600px) {
   #park-name {
     font-size: 20px;
@@ -363,5 +412,9 @@ a.site-title:hover {
 
   #about-national-park {
     font-size: 15px;
+  }
+
+  #info {
+    grid-template-columns: 1fr;
   }
 }

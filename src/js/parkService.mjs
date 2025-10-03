@@ -23,3 +23,36 @@ export async function getParkData(requestedParkCode) {
   const parkData = await getJson(`parks?parkCode=${requestedParkCode}`);
   return parkData.data[0];
 }
+
+const parkInfoLinks = [
+  {
+    name: "Current Conditions &#x203A;",
+    link: "conditions.html",
+    image: "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg",
+    description: "See what conditions to expect in the park before leaving on your trip!",
+    imgAlt: ""
+  },
+  {
+    name: "Fees and Passes &#x203A;",
+    link: "fees.html",
+    image: "https://www.nps.gov/common/uploads/structured_data/3C7D383B-1DD8-B71B-0BEC4A4D6BDF7CAD.jpg",
+    description: "Learn about the fees and passes that are available.",
+    imgAlt: ""
+  },
+  {
+    name: "Visitor Centers &#x203A;",
+    link: "visitor_centers.html",
+    image: "https://www.nps.gov/common/uploads/structured_data/3C7D8903-1DD8-B71B-0BA8669AEEF74379.jpg",
+    description: "Learn about the visitor centers in the park.",
+    imgAlt: ""
+  }
+];
+
+export function getInfoLinks(data) {
+  const withUpdatedImages = parkInfoLinks.map((item, index) => {
+    item.image = data.images[index + 2].url;
+    item.imgAlt = data.images[index + 2].altText;
+    return item;
+  });
+  return withUpdatedImages;
+}

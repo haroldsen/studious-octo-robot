@@ -1,5 +1,5 @@
 
-import { getParkData } from "./parkService.mjs";
+import { getInfoLinks, getParkData } from "./parkService.mjs";
 import { mediaCardTemplate } from "./template.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
 
@@ -9,10 +9,9 @@ function setIntroData(data) {
 }
 
 function setInfoData(infoList) {
-    console.log(infoList.images[0]);
     const infoSection = document.getElementById('info');
-    for (let index = 0; index < infoList.images.length; index ++) {
-        infoSection.insertAdjacentHTML('beforeend', mediaCardTemplate(infoList.images[index]));
+    for (let index = 0; index < infoList.length; index ++) {
+        infoSection.insertAdjacentHTML('beforeend', mediaCardTemplate(infoList[index]));
     }
 }
 
@@ -21,7 +20,7 @@ async function init() {
 
     setHeaderFooter(parkData);
     setIntroData(parkData);
-    setInfoData(parkData);
+    setInfoData(getInfoLinks(parkData));
 }
 
 init();

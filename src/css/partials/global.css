@@ -1,0 +1,36 @@
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: none;
+  border: none;
+  padding: none;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  font-size: 18px;
+  margin: 0;
+  overflow-x: hidden;
+  /* background-color: #00aced; */
+}
+
+a:link,
+a:visited {
+  color: var(--bs-link-color);
+}
+
+a:hover {
+  color: var(--bs-link-hover-color);
+}

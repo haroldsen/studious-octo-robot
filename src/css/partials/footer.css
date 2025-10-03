@@ -1,0 +1,21 @@
+
+footer {
+  background-image: url("https://byui-cse.github.io/wdd231-course/images/topo_pattern.png");
+  padding: 30px;
+}
+
+footer h3, #intro-header {
+  font-family: var(--bs-font-serif);
+}
+
+footer h3 {
+  font-size: 25px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}

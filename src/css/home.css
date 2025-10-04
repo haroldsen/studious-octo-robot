@@ -10,10 +10,12 @@
   padding-left: 20px;
   padding-right: 20px;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
 }
 
 .media-card {
   width: 100%;
+  max-width: 300px;
   /* background-color: #d1d1d1;
   padding: 20px;
   border-radius: 15px; */
@@ -21,6 +23,12 @@
 
 .media-card a:hover {
   cursor: pointer;
+}
+
+.media-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 #intro-header {

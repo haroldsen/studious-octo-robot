@@ -79,3 +79,9 @@ details * {
 #activities li {
     list-style-position: inside;
 }
+
+@media (max-width: 900px) {
+  #alert-list li, #visitor-centers, #activities {
+    border-radius: 0;
+  }
+}

@@ -24,6 +24,16 @@ export async function getParkData(requestedParkCode) {
   return parkData.data[0];
 }
 
+export async function getAlertData(requestedParkCode) {
+  const alertData = await getJson(`alerts?parkCode=${requestedParkCode}`);
+  return alertData.data;
+}
+
+export async function getVisitorCenterData(requestedParkCode) {
+  const visitorCenterData = await getJson(`visitorcenters?parkCode=${requestedParkCode}`);
+  return visitorCenterData.data;
+}
+
 const parkInfoLinks = [
   {
     name: "Current Conditions &#x203A;",

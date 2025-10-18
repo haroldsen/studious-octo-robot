@@ -34,3 +34,13 @@ a:visited {
 a:hover {
   color: var(--bs-link-hover-color);
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

@@ -26,4 +26,23 @@ async function init() {
     setInfoData(getInfoLinks(parkData));
 }
 
+function enableNavigation() {
+
+    let menuButton = document.getElementById('global-nav-toggle');    
+    let globalNav = document.getElementById('global-nav');
+
+    menuButton.addEventListener("click", (ev) => {
+        let target = ev.target;
+        let clickedDiv = target.closest('div').className;
+        if (clickedDiv === 'global-nav__toggle--closed') {
+            globalNav.style.maxHeight = '200px';
+            menuButton.ariaExpanded = 'true';
+        } else if (clickedDiv === 'global-nav__toggle--open') {
+            globalNav.style.maxHeight = '0';
+            menuButton.ariaExpanded = 'false';
+        }
+    });
+}
+
+enableNavigation();
 init();

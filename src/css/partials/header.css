@@ -272,6 +272,66 @@ a.site-title:hover {
   text-decoration-thickness: 2px;
 }
 
+.global-nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5vw;
+}
+
+.global-nav__list li {
+  list-style-type: none;
+}
+
+.global-nav .global-nav__split-button__toggle {
+  text-align: left;
+  color: var(--bs-gray-600);
+  padding: 5px;
+  margin: 0;
+  width: 100%;
+}
+
+.global-nav .global-nav__split-button__toggle:hover {
+  cursor: default;
+}
+
+.global-nav__submenu a {
+  display: block;
+  padding: 5px;
+  color: white;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.global-nav__submenu a:hover {
+  background-color: var(--bs-gray-900);
+}
+
+.open svg {
+  transform: rotate(180deg);
+}
+
+#global-nav li[aria-expanded="true"] {
+  .closed {
+    display: none;
+  }
+
+  .open {
+    display: block;
+  }
+}
+
+#global-nav li[aria-expanded="false"] {
+  .closed {
+    display: block;
+  }
+
+  .open {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   #park-name {
     font-size: 20px;
@@ -279,5 +339,18 @@ a.site-title:hover {
 
   #about-national-park {
     font-size: 15px;
+  }
+
+  .global-nav__list {
+    flex-direction: column;
+  }
+
+  li[aria-expanded="false"] .global-nav__submenu {
+    display: none;
+  }
+
+  .global-nav .global-nav__split-button__toggle:hover {
+    cursor: pointer;
+    background-color: var(--bs-gray-900);
   }
 }

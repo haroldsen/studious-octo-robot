@@ -39,7 +39,7 @@ svg {
 .global-nav {
   max-height: 0;
   overflow: hidden;
-  transition: ease-out 0.5s;
+  transition: ease-out 2s;
   background-color: var(--bs-black);
   color: white;
 }
@@ -312,24 +312,32 @@ a.site-title:hover {
   transform: rotate(180deg);
 }
 
+.closed, .open {
+  justify-content: space-between;
+}
+
 #global-nav li[aria-expanded="true"] {
   .closed {
     display: none;
   }
 
   .open {
-    display: block;
+    display: flex;
   }
 }
 
 #global-nav li[aria-expanded="false"] {
   .closed {
-    display: block;
+    display: flex;
   }
 
   .open {
     display: none;
   }
+}
+
+.global-nav__split-button__toggle svg {
+  display: none;
 }
 
 @media (max-width: 600px) {
@@ -352,5 +360,9 @@ a.site-title:hover {
   .global-nav .global-nav__split-button__toggle:hover {
     cursor: pointer;
     background-color: var(--bs-gray-900);
+  }
+
+  .global-nav__split-button__toggle svg {
+    display: flex;
   }
 }

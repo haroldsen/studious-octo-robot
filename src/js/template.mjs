@@ -33,7 +33,7 @@ export function alertItemTemplate(alert) {
 export function visitorCenterTemplate(visitorCenter) {
     return `
         <div>
-            <h3>${visitorCenter.name}</h3>
+            <a href="visitor-center.html?id=${visitorCenter.id}"><h3>${visitorCenter.name}</h3></a>
             <p>${visitorCenter.description}</p>
         </div>
     `;

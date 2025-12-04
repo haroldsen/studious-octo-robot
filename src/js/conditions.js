@@ -2,14 +2,15 @@
 import "../css/styles.css";
 import "../css/conditions.css";
 
+import { parkCode } from './parkCode.mjs';
 import { getParkData, getAlertData, getVisitorCenterData } from "./parkService.mjs";
 import { alertItemTemplate, visitorCenterTemplate } from "./template.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
 
 async function init() {
-    const parkData = await getParkData('maca');
-    const alertData = await getAlertData('maca');
-    const visitorCenterData = await getVisitorCenterData('maca');
+    const parkData = await getParkData(parkCode);
+    const alertData = await getAlertData(parkCode);
+    const visitorCenterData = await getVisitorCenterData(parkCode);
 
     setHeaderFooter(parkData);
     setAlerts(alertData);

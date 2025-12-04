@@ -1,4 +1,6 @@
 
+import { visitorCenterTemplate } from "./template.mjs";
+
 const baseUrl = "https://developer.nps.gov/api/v1/";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
 
@@ -65,4 +67,15 @@ export function getInfoLinks(data) {
     return item;
   });
   return withUpdatedImages;
+}
+
+export async function getParkVisitorCenterDetails(id='6DC6F87E-5D33-469F-8C9C-6D821186633A') {
+  const vistorCenterJSON = await getJson('visitorcenters');
+  const visitorCenters = vistorCenterJSON.data;
+  for (let i = 0; i < visitorCenters.length; i ++) {
+    if (visitorCenters[i].id == id) {
+      console.log(visitorCenters[i]);
+      return visitorCenters[i];
+    }
+  }
 }

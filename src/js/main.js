@@ -2,6 +2,7 @@
 import "../css/styles.css";
 import "../css/home.css";
 
+import { parkCode } from './parkCode.mjs';
 import { getInfoLinks, getParkData } from "./parkService.mjs";
 import { mediaCardTemplate } from "./template.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
@@ -19,7 +20,7 @@ function setInfoData(infoList) {
 }
 
 async function init() {
-    const parkData = await getParkData('maca');
+    const parkData = await getParkData(parkCode);
 
     setHeaderFooter(parkData);
     setIntroData(parkData);

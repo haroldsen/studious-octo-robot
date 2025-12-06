@@ -38,3 +38,16 @@ export function visitorCenterTemplate(visitorCenter) {
         </div>
     `;
 }
+
+export function listTemplate(data, templateFunction) {
+    const html = data.map(templateFunction);
+    return html.join('');
+}
+
+export function visitorCenterImageTemplate(data) {
+    return `<li><img src="${data.url}" alt="${data.altText}"></li>`;
+}
+
+export function visitorCenterAmenityTemplate(data) {
+    return `<li>${data}</li>`;
+}

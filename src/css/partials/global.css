@@ -44,3 +44,42 @@ main {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+summary {
+    user-select: none;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+details * {
+    margin: 0;
+}
+
+details > *:not(summary) {
+    /*
+    This synthetically creates a gap effect within the details element.
+    For some reason, applying gap to the details elements were producing
+    weird effects when they were collapsed.
+    */
+    margin-top: 20px;
+}
+
+details {
+    width: 100vw;
+    max-width: 900px;
+    padding: 20px;
+    border: solid #999 1px;
+    border-radius: 15px;
+}
+
+details li {
+    list-style-position: inside;
+}
+
+@media (max-width: 900px) {
+  details {
+    border-radius: 0;
+  }
+}

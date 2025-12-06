@@ -31,7 +31,7 @@ export async function getAlertData(requestedParkCode) {
   return alertData.data;
 }
 
-export async function getVisitorCenterData(requestedParkCode) {
+export async function getVisitorCentersForPark(requestedParkCode) {
   const visitorCenterData = await getJson(`visitorcenters?parkCode=${requestedParkCode}`);
   return visitorCenterData.data;
 }
@@ -69,10 +69,11 @@ export function getInfoLinks(data) {
   return withUpdatedImages;
 }
 
-export async function getParkVisitorCenterDetails(id='6DC6F87E-5D33-469F-8C9C-6D821186633A') {
-  const vistorCenterJSON = await getJson('visitorcenters');
+export async function getVisitorCenterData(id='6DC6F87E-5D33-469F-8C9C-6D821186633A') {
+  const vistorCenterJSON = await getJson(`visitorcenters?parkCode=yell`);
   const visitorCenters = vistorCenterJSON.data;
   for (let i = 0; i < visitorCenters.length; i ++) {
+    console.log(visitorCenters[i].id);
     if (visitorCenters[i].id == id) {
       console.log(visitorCenters[i]);
       return visitorCenters[i];

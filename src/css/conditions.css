@@ -41,47 +41,15 @@
     margin: 0;
 }
 
-#visitor-centers, #activities {
-    width: 100vw;
-    max-width: 900px;
-    padding: 20px;
-    border: solid #999 1px;
-    border-radius: 15px;
-}
-
-#visitor-centers > *:not(summary), #activities > *:not(summary) {
-    /*
-    This synthetically creates a gap effect within the details element.
-    For some reason, applying gap to the details elements were producing
-    weird effects when they were collapsed.
-    */
-    margin-top: 20px;
-}
-
 #visitor-centers div, #activities div {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-summary {
-    user-select: none;
-}
-
-summary:hover {
-    cursor: pointer;
-}
-
-details * {
-    margin: 0;
-}
-
-#activities li {
-    list-style-position: inside;
+    background-color: turquoise;
 }
 
 @media (max-width: 900px) {
-  #alert-list li, #visitor-centers, #activities {
+  #alert-list li {
     border-radius: 0;
   }
 }

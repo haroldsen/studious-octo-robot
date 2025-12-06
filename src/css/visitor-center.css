@@ -1,0 +1,12 @@
+
+#address-list, #contact-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#address-list li > *:first-child, #contact-list li > *:first-child {
+    color: var(--bs-link-color);
+    margin-bottom: 10px;
+}

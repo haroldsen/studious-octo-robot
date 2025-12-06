@@ -1,4 +1,10 @@
 
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 #address-list, #contact-list {
     list-style-type: none;
     display: flex;
@@ -9,4 +15,42 @@
 #address-list li > *:first-child, #contact-list li > *:first-child {
     color: var(--bs-link-color);
     margin-bottom: 10px;
+}
+
+#visitor-center-intro, #visitor-center-gallery {
+    width: 100vw;
+    max-width: 900px;
+    padding: 20px;
+    border: solid #999 1px;
+    border-radius: 15px;
+}
+
+#visitor-center-intro > *, #visitor-center-gallery > * {
+    margin: 0;
+}
+
+#visitor-center-name * {
+    height: 1em;
+}
+
+h1 > svg, h2 > svg, summary > svg {
+    height: 1em;
+    fill: black;
+}
+
+#visitor-center-gallery-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;
+}
+
+@media (max-width: 900px) {
+  #visitor-center-intro, #visitor-center-gallery {
+    border-radius: 0;
+  }
+
+  #visitor-center-gallery-list {
+    grid-template-columns: 1fr;
+  }
 }

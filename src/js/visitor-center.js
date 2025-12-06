@@ -62,7 +62,7 @@ function populateVisitorCenterIntro(data) {
 }
 
 function setVisitorCenterData(data) {
-    document.getElementById('visitor-center-name').innerHTML = data.name;
+    document.getElementById('visitor-center-name').insertAdjacentHTML('beforeend', data.name);
 
     populateImageGallery(data);
     populateVisitorCenterDetails(data);

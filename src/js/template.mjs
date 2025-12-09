@@ -2,9 +2,10 @@
 import spritePath from '../images/sprite.symbol.svg';
 
 export function mediaCardTemplate(info) {
+    console.log(info.link);
     let mediaCard = `
     <div class="media-card">
-        <a src="${info.link}">
+        <a href="${info.link}">
             <img src="${info.image}" alt="${info.imgAlt}">
             <h2>${info.name}</h2>
         </a>

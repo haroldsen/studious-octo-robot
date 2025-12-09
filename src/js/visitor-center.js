@@ -11,6 +11,10 @@ function getParam(param) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
+    console.log(param);
+    console.log(urlParams);
+    console.log(queryString);
+
     return urlParams.get(param);
 }
 

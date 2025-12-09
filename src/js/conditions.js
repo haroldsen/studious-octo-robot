@@ -7,6 +7,13 @@ import { getParkData, getAlertData, getVisitorCentersForPark } from "./parkServi
 import { alertItemTemplate, visitorCenterTemplate } from "./template.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
 
+function getParam(param) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    return urlParams.get(param);
+}
+
 async function init() {
     const parkData = await getParkData(parkCode);
     const alertData = await getAlertData(parkCode);
@@ -16,6 +23,15 @@ async function init() {
     setAlerts(alertData);
     setVisitorCenterData(visitorCenterData);
     setActivities(parkData);
+
+    // This focuses on the visitor center list if the user attempts to navigate to the visitor centers.
+    const visitorCenters = document.getElementById('visitor-centers');
+    let focus = getParam('f');
+    if (focus) {
+        console.log('triggered!');
+        visitorCenters.open = true;
+        visitorCenters.focus()
+    }
 }
 
 function setAlerts(alertData) {
